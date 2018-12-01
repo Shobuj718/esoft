@@ -57,11 +57,11 @@ $results = $stmt->execute();
             <tr>
                 <th class="text-left">Sl</th>
                 <th class="text-left">Name</th>
+                <th class="text-left">Action</th>
                 <th class="text-left">Designation</th>
                 <th class="text-left">Qualificatin</th>
                 <th class="text-left">Mobile</th>
                 <th class="text-left">Index_No</th>
-                <th class="text-left">Action</th>
             </tr>
             <?php
             $sl = 1;
@@ -73,17 +73,20 @@ $results = $stmt->execute();
                         <?php echo $result['teacher_name']?>
                         <input type="hidden" name="unique_id" value="<?php echo $result['unique_id']?>">    
                     </td>
+                    
+                    <td>
+                        <input type="radio"  name="attend[<?php echo $result['mobile']; ?>]" value="present"  required="">P
+                        <input type="radio" name="attend[<?php echo $result['mobile']; ?>]" value="absent"  required="">A
+                        <input type="radio" name="attend[<?php echo $result['mobile']; ?>]" value="leave"  required="">L
+                    </td>
+
                     <td><input type="hidden" name="designation" value="<?php echo $result['designation']?>"> <?php echo $result['designation']?></td>
                     <td><input type="hidden" name="eduquali" value="<?php echo $result['eduquali']?>"> <?php echo $result['eduquali']?></td>
                     <td><input type="hidden" name="mobile" value="<?php echo $result['mobile']?>"> <?php echo $result['mobile']?></td>
                     <td><input type="hidden" name="index_number" value="<?php echo $result['index_number']?>"> <?php echo $result['index_number']?></td>
                       
                   
-                    <td>
-                        <input type="radio"  name="attend[<?php echo $result['mobile']; ?>]" value="present"  required="">P
-                        <input type="radio" name="attend[<?php echo $result['mobile']; ?>]" value="absent"  required="">A
-                        <input type="radio" name="attend[<?php echo $result['mobile']; ?>]" value="leave"  required="">L
-                    </td>
+                    
                     
                 </tr>
             <?php }/* } else { ?>

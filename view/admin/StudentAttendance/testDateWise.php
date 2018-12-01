@@ -15,7 +15,7 @@ use App\Admin\Attendance\Attendance;
 
 $attendance = new Attendance();
 
-var_dump($_POST);
+//var_dump($_POST);
 $results = $attendance->set($_POST)->EditStudentAttend();
 
 /*echo "<pre>";

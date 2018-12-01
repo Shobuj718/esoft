@@ -11,7 +11,7 @@ if(!isset($_SESSION)){
 $_SESSION['type'] = "administrator";*/
 
 if(!isset($_SESSION['username'])){
-    echo "<script>window.location= 'http://localhost/saghataen/view/admin/login/index.php'</script>";
+    echo "<script>window.location= 'http://localhost/esoft/view/admin/login/index.php'</script>";
 }
 
 $auth = new Auth();
@@ -34,7 +34,7 @@ foreach($data as $result){
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Educational Management Software</title>
-    <base href="http://localhost/saghataen/">
+    <base href="http://localhost/esoft/">
     <link rel="shortcut icon" href="assets/admin/dist/img/avatar.png">
 
     <!-- Tell the browser to be responsive to screen width -->

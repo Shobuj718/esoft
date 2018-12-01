@@ -10,9 +10,11 @@ error_reporting(0);
 
 include_once '../../../vendor/autoload.php';
 
-use App\Admin\Attendance\TeacherAttendance;
+use App\Admin\TeacherAttendance\TeacherAttendance;
+use App\Admin\Attendance\Attendance;
 
 $attendance = new TeacherAttendance();
+$attendance2 = new Attendance();
 
 echo "<pre>";
 var_dump($_POST);
@@ -25,10 +27,10 @@ $attend       = $_POST['attend'];
 $id           = $_POST['unique_id'];
 
 //die();
-$attendance->insert($name);
+$attendance2->insert($name, $mobile );
 //$result = $attendance->set($_POST)->AttendTaken($name, $mobile, $index_number, $eduquali, $designation, $attend, $id);	
 
 
-echo "<pre>";
-var_dump($result);
-die();
+// echo "<pre>";
+// var_dump($result);
+// die();

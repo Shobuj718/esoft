@@ -236,6 +236,23 @@ class Attendance extends Connection
     }
 	}
 
+	public function insert($name){
+		try {
+			//$datetime = date('Y-m-d h:m:a');
+			$stmt = $this->con->prepare("insert into teacherattend(name, mobile) values(:name, :mobile)");
+			$stmt->bindValue(':name', $name, PDO::PARAM_STR);
+			$stmt->bindValue(':mobile', $mobile, PDO::PARAM_STR);
+			$stmt->execute();
+			if($stmt){
+				$_SESSION['attTake'] = "Teacher Attendance Taken Successfully ";
+			            echo "<script>window.location='index.php'</script>";
+			}
+		}  catch (PDOException $e) {
+			echo "Error: ".$e->getMessage()."<br>";
+			die();
+		}
+	}
+
 	
 }	 
    

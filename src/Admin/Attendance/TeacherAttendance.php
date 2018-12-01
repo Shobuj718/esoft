@@ -39,10 +39,13 @@ class TeacherAttendance extends Connection
 	public function insert($name){
 		try {
 			$datetime = date('Y-m-d h:m:a');
-			$stmt = $this->con->prepare("insert into teacher_attend(name, created_at) values(:name, :created_at");
-			$stmt->bindValue(':name', $name, PDO::PARAM_STR);
-			$stmt->bindValue(':created_at', $datetime, PDO::PARAM_STR);
+			$stmt = $this->con->prepare("insert into teacher_attend(name) values(:name)");
+				$stmt->bindValue(':name', $name, PDO::PARAM_STR);
 			$stmt->execute();
+			if($stmt){
+					$_SESSION['attTake'] = "Student Attendance Taken Successfully ";
+			            echo "<script>window.location='searchForTakeAttendance.php'</script>";
+				}
 		}  catch (PDOException $e) {
 			echo "Error: ".$e->getMessage()."<br>";
 			die();

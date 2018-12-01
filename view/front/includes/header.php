@@ -5,7 +5,7 @@
 <html>
 <head>
 <title>ফাঁপোর উচ্চ বিদ্যালয় </title>
-<base href="http://localhost/saghataen/">
+<base href="http://localhost/esoft/">
 <link rel="shortcut icon" href="assets/front/images/ehsan soft logo.png">
 
 <meta charset="utf-8">
