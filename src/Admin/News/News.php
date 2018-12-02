@@ -157,9 +157,25 @@ class News extends Connection
         }
     }
 
+    // news info select
     public function newsSelect($id){
+        try{
+            $stmt = $this->con->prepare('SELECT * FROM `top_news` WHERE unique_id = :id');
+            $stmt->bindValue(':id', $id, PDO::PARAM_STR);
+            $stmt->execute();
+            return $stmt->fetch(PDO::FETCH_ASSOC);
+
+        }
+        catch (PDOException $e) {
+               print "Error!: " . $e->getMessage() . "<br/>";
+               die();
+           }
+    }
+
+    // slide info select
+    public function slideSelect($id){
     	try{
-    		$stmt = $this->con->prepare('SELECT * FROM `top_news` WHERE unique_id = :id');
+    		$stmt = $this->con->prepare('SELECT * FROM slide WHERE unique_id = :id');
     		$stmt->bindValue(':id', $id, PDO::PARAM_STR);
     		$stmt->execute();
     		return $stmt->fetch(PDO::FETCH_ASSOC);
@@ -184,7 +200,7 @@ class News extends Connection
             die();
         }
     }
-
+    // news info updated...
     public function update(){
         try {
             if($this->image){
@@ -233,6 +249,90 @@ class News extends Connection
             die();
         }
     }
+
+    // insert data for ...
+    public function insert_dynamically()
+    {
+        try {
+
+        if($this->image){
+            $stmt = $this->con->prepare("insert into slide(news, details,  image, year, news_date, month, unique_id )
+                VALUES(:notice, :details,  :image, :year, :news_date, :month, :unique_id )");
+
+            $result = $stmt->execute(array(
+                ':notice' => $this->notice,
+                ':details' => $this->details,
+                ':image'=>$this->image,
+                ':year'=>date('Y'),
+                ':news_date'=>date('Y-m-d'),
+                ':month'=>date('m'),
+                ':unique_id'=> md5(time())
+
+            ));
+
+
+            if($result){
+                $_SESSION['notice'] = 'Slider successfully Inserted !!!';
+                echo "<script>window.location= 'allslide.php'</script>";
+            }
+        }else{
+            $stmt = $this->con->prepare("insert into slide(news, details, year, news_date, month, unique_id )
+                VALUES(:notice, :details, :year, :news_date, :month, :unique_id )");
+
+            $result = $stmt->execute(array(
+                ':notice' => $this->notice,
+                ':details' => $this->details,
+                ':year'=>date('Y'),
+                ':news_date'=>date('Y-m-d'),
+                ':month'=>date('m'),
+                ':unique_id'=> md5(time())
+
+            ));
+
+
+            if($result){
+                $_SESSION['notice'] = 'Slider successfully Inserted !!!';
+                echo "<script>window.location= 'allslide.php'</script>";
+            }
+        }
+            
+        } catch (PDOException $e) {
+            echo "Error: ".$e->getMessage()."<br>";
+            die();
+        }
+    }
+
+    // slide info updated...
+    public function slideupdate(){
+        try {
+            if($this->image){
+                $stmt = $this->con->prepare('update slide set news = :news, details = :details, image = :image where unique_id = :unique_id ');
+            $stmt->bindValue(':news',  $this->news, PDO::PARAM_STR);
+            $stmt->bindValue(':details', $this->details, PDO::PARAM_STR);
+            $stmt->bindValue(':image', $this->image, PDO::PARAM_STR);
+            $stmt->bindValue(':unique_id', $this->unique_id, PDO::PARAM_STR);
+            $stmt->execute();
+            if($stmt){
+                $_SESSION['newsUpdate'] = "Slider Updated Successfully ";
+                echo "<script>window.location='allslide.php';</script>";
+            }
+          }
+          else{
+            $stmt = $this->con->prepare('update slide set news = :news, details = :details where unique_id = :unique_id ');
+            $stmt->bindValue(':news',  $this->news, PDO::PARAM_STR);
+            $stmt->bindValue(':details', $this->details, PDO::PARAM_STR);
+            $stmt->bindValue(':unique_id', $this->unique_id, PDO::PARAM_STR);
+            $stmt->execute();
+            if($stmt){
+                $_SESSION['newsUpdate'] = "slide Updated Successfully ";
+                echo "<script>window.location='allslide.php';</script>";
+            }
+          }
+        } catch (PDOException $e) {
+            echo "Error: ".$e->getMessage. "<br />";
+            die();
+        }
+    }
     //news deleted and going to trash...
     public function deleteslide($id){
         try {
@@ -242,7 +342,7 @@ class News extends Connection
             $stmt->execute();
 
             if($stmt){
-                $_SESSION['newsDelete'] = "News Deleted Successfully. ";
+                $_SESSION['newsDelete'] = "Slide Deleted Successfully. ";
                 echo "<script>window.location='allslide.php'</script>";
             }
         } catch (PDOException $e) {

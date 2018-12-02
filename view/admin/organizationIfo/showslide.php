@@ -10,7 +10,7 @@ $news = new News();
 
 $id = $_GET['show'];
 
-$result = $news->newsSelect($id);
+$result = $news->slideSelect($id);
 
 
 //error_reporting(0);
@@ -25,7 +25,7 @@ $result = $news->newsSelect($id);
 
         <h3 style="text-align: center; padding-right:50px;"> <strong style="color:red;">Summary  : </strong><?php echo $result['news']?></h3>
         <div style="text-align: center; padding-right:50px" class="form-group">
-            <img src="view/admin/uploads/news/<?php echo $result['image']?>" class="img-rounded" width="100" alt="no image">
+            <img src="view/admin/uploads/slide/<?php echo $result['image']?>" class="img-rounded" width="100" alt="no image">
 
         </div>
 

@@ -604,7 +604,7 @@ z-index: 999999;
 
                         <li><a href="view/admin/organizationIfo/topnews.php"><i class="fa fa-circle-o"></i>Add Notice</a></li>
                         <li><a href="view/admin/organizationIfo/slideadd.php"><i class="fa fa-circle-o"></i>Add Slider Image</a></li>
-                        <li><a href="view/admin/organizationIfo/allslide.php"><i class="fa fa-circle-o"></i>All Slide Image</a></li>
+                        <li><a href="view/admin/organizationIfo/allslide.php"><i class="fa fa-circle-o"></i>All Slider Image</a></li>
 
                     <?php } ?>
 

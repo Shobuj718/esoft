@@ -10,5 +10,5 @@ $id = $_GET['del'];
 $news = new News();
 $helper = new helper();
 
-$helper->img_delete($id);
+//$helper->img_delete($id);
 $news->delete($id);
