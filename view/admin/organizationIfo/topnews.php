@@ -16,7 +16,7 @@
             <!-- <form action="#" method="post" enctype="multipart/form-data"> -->
             <form action="view/admin/organizationIfo/noticeInsert.php" method="post" enctype="multipart/form-data">
 
-                <h3 class="text-center" style="color: #2559ee">স্কুলের  নোটিশ লিখুন  </h3>
+                <h3 class="text-center" style="color: #2559ee">Enter the school's notice </h3>
                 <hr />
                    
 
@@ -42,17 +42,17 @@
                    
                     <div class="col-lg-8 col-md-offset-2">
                         <div class="form-group">
-                            <label for="">নোটিশ :<font color="red" size="4">*</font> </label>
+                            <label for="">Notice :<font color="red" size="4">*</font> </label>
                             <input type="text" name="notice" class="form-control" placeholder="Enter notice..." id="" required="required">
                         </div>
 
                          <div class="form-group">
-                            <label for="">বিস্তারিত  : </label>
+                            <label for="">Details  : </label>
                             <textarea class="form-control" name="details" rows="5" id=""></textarea>
                         </div>
  
                         <div class="form-group">
-                            <label for="">ছবি আপলোড : </label>
+                            <label for="">Upload Image/PDF: </label>
                             <input type='file' name="image"   onchange="readURL(this);"   />
                             <img id="blah" src="#" alt=" " />
                         </div>
@@ -63,7 +63,7 @@
                         <br />
 
                         <div class="form-group">
-                            <input type="submit" name="submit" class="btn btn-primary" value="যোগ করুন " id="">
+                            <input type="submit" name="submit" class="btn btn-primary" value="Add" id="">
                         </div>
                         
                       </div>

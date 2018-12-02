@@ -1,5 +1,5 @@
 <?php 
-    include_once '../../../vendor/autoload.php';
+include_once '../../../vendor/autoload.php';
 
 // echo "<pre>";
 // var_dump($_POST);
@@ -18,15 +18,13 @@ if(!empty($_FILES['image']['name'])){
 
 	$helper->img_delete($_POST['unique_id']);
 	$_POST['image'] = $helper->image_upload($_POST['unique_id']);
+ 	$result = $news->set($_POST);
+ 	$news->update();
 
- //$result = $news->set($_POST);
- //$result->update();
-
-}
- 
+}else{ 
 	$result = $news->set($_POST);
- 	$result->update();
-
+ 	$news->update();
+}
  
  
  

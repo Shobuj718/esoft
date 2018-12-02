@@ -1,26 +1,7 @@
 
-<?php
-                 
- // if(isset($_SESSION["username"]))  
- // {  
- //    header('location:view/admin/index.php');
- //      // echo '<h3>Login Success, Welcome - '.$_SESSION["username"].'</h3>';  
- //      // echo '<br /><br /><a href="logout.php">Logout</a>';  
- // }  
- // else  
- // {  
- //      header("location:../../../index.php");  
- // }
- ?>
 
 <?php
-    include_once '../includes/header.php';
-    include_once '../../../vendor/autoload.php';
 
-
-?>
-
-<?php
 /**
  * Created by PhpStorm.
  * User: Shobuj
@@ -28,6 +9,8 @@
  * Time: 12:17 PM
  */
 
+    include_once '../includes/header.php';
+    include_once '../../../vendor/autoload.php';
 
 
 use App\admin\News\News;
@@ -37,24 +20,13 @@ $stmt = 'SELECT * FROM top_news where status = "1" ORDER by id DESC ';
 $results = $news->select($stmt);
 
 
-//error_reporting(0);
-//
-//$db = new PDO('mysql:host=localhost;dbname=bangla;charset=utf8', 'root', '');
-//$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-//$db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
-//
-//$stmt = $db->query('SELECT * FROM student_data where status = "1" ORDER by id ASC ');
-//$results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-//use $results
-
 
 
 ?>
             <!-- Content Header (Page header) -->
             <section class="content-header">
                 <h1>
-                   সকল নোটিশ
+                   All School Notice
                 </h1>
                 <ol class="breadcrumb">
                     <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -99,7 +71,8 @@ $results = $news->select($stmt);
             ?>
 
                             <!-- /.box-header -->
-                            <div class="box-body">
+                        <div class="box-body">
+                            <div class="box-body table-responsive no-padding">
                                 <table id="example1" class="table table-bordered table-striped">
                                     <thead>
                                     <tr>
@@ -127,16 +100,16 @@ $results = $news->select($stmt);
                     <!--                                    <a class="btn btn-info" href="#">Show</a>-->
                     <!--                                    <a class="btn btn-primary" href="#">Edit</a>-->
                     <!--                                    <a class="btn btn-danger" href="#">Delete</a>-->
-                    <a style="color: black" class="text-info" href="view/admin/organizationIfo/showNews.php?show=<?php echo $result['unique_id']?>">View</a>
+                    <a style="color: "  class="btn btn-primary btn-sm btn-flat" href="view/admin/organizationIfo/showNews.php?show=<?php echo $result['unique_id']?>">View &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
 
                 <?php  
                     if($_SESSION['type'] == 'administrator'){
                 ?>
 
                     <br />
-                    <a  class="text-primary" href="view/admin/organizationIfo/editNews.php?edit=<?php echo $result['unique_id']?>">Edit</a>
+                    <a  class="btn btn-success btn-sm btn-flat" href="view/admin/organizationIfo/editNews.php?edit=<?php echo $result['unique_id']?>"><i class="fa fa-edit"></i>Edit&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
                      <br />
-                    <a onclick="return confirm('Are you sure to Delete'); " class="text-danger" href="view/admin/organizationIfo/deleteNews.php?del=<?php echo $result['unique_id']?>">Delete</a>
+                    <a onclick="return confirm('Are you sure to Delete'); " class="btn btn-danger btn-sm btn-flat" href="view/admin/organizationIfo/deleteNews.php?del=<?php echo $result['unique_id']?>"> <i class="fa fa-trash"></i> Delete</a>
 
                 <?php } ?>
                                         </td>
@@ -149,6 +122,7 @@ $results = $news->select($stmt);
                                 </table>
                             </div>
                             <!-- /.box-body -->
+                          </div>
                         </div>
                         <!-- /.box -->
                     </div>

@@ -26,7 +26,7 @@
             <!-- <form action="#" method="post" enctype="multipart/form-data"> -->
             <form action="view/admin/organizationIfo/updateNews.php" method="post" enctype="multipart/form-data">
 
-                <h3 class="text-center" style="color: #2559ee">স্কুলের  নোটিশ সংশোধন করুন   </h3>
+                <h3 class="text-center" style="color: #2559ee">Update School Notice   </h3>
                 <hr />
                    
 
@@ -37,11 +37,11 @@
             
             if(isset($_SESSION['imgSize'])){
                 echo "<div class='alert alert-danger'>".$_SESSION['imgSize']."</div>";
-                //session_unset();
+                unset($_SESSION['imgSize']);
             }
             if(isset($_SESSION['fileext'])){
                 echo "<div class='alert alert-danger'>".$_SESSION['fileext']."</div>";
-                //session_unset();
+                unset($_SESSION['fileext']);
             }
 
 
@@ -50,7 +50,7 @@
                    
                     <div class="col-lg-8 col-md-offset-2">
                         <div class="form-group">
-                            <label for="">নোটিশ :<font color="red" size="4">*</font> </label>
+                            <label for="">Notice :<font color="red" size="4">*</font> </label>
                             <input type="text" name="news" class="form-control" value="<?= $result['news']; ?>" id="" required="required">
 
                             <input type="hidden" name="image" class="form-control" value="<?= $result['image']; ?>" id=""  >
@@ -60,12 +60,12 @@
                         </div>
 
                          <div class="form-group">
-                            <label for="">বিস্তারিত  : </label>
+                            <label for="">Details  : </label>
                             <textarea class="form-control" name="details" rows="5" id=""><?= $result['details']; ?></textarea>
                         </div>
  
                         <div class="form-group">
-                            <label for="">ছবি আপলোড : </label>
+                            <label for="">Upload Image/PDF : </label>
                             <input type='file' name="image"   onchange="readURL(this);"   />
                             <img width="120" id="blah" src="view/admin/uploads/news/<?= $result['image']; ?>" alt=" " />
                         </div>
@@ -76,7 +76,7 @@
                         <br />
 
                         <div class="form-group">
-                            <input type="submit" name="submit" class="btn btn-primary" value="সংশোধন  করুন " id="">
+                            <input type="submit" name="submit" class="btn btn-primary" value="Update" id="">
                         </div>
                         
                       </div>

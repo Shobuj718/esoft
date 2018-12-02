@@ -10,15 +10,16 @@ use PDO;
 class Helper extends Connection
 {
 
+	// notice image deleted....
 	public function img_delete($unique_id){
 		$stmt = $this->con->prepare("select image from top_news where unique_id = :id ");
 		$stmt->bindValue(':id', $unique_id, PDO::PARAM_STR);
 		$stmt->execute();
 		$image_name = $stmt->fetch(PDO::PARAM_STR);
-		$data = "../uploads/news/".$image_name['image'];
-		if(isset($data)){
-			unlink($data);
+		if(file_exists('../uploads/news/'.$image_name['image'])){
+			unlink('../uploads/news/'.$image_name['image']);
 		}
+		
 	}
 
 	public function image_upload($unique_id){

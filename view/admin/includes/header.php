@@ -597,8 +597,6 @@ z-index: 999999;
                     <ul class="treeview-menu">
                         <li><a href="view/admin/organizationIfo/allnews.php"><i class="fa fa-circle-o"></i> Dashboard  </a></li>
                        
-                        <li><a href="javascript:void(0)"><i class="fa fa-circle-o"></i>Institution Information </a></li>
-                        <li><a href="javascript:void(0)"><i class="fa fa-circle-o"></i> Building Information </a></li>
 
                     <?php 
                         if($_SESSION["type"] == 'administrator'){
@@ -611,7 +609,6 @@ z-index: 999999;
                     <?php } ?>
 
                         <li><a href="view/admin/organizationIfo/allnews.php"><i class="fa fa-circle-o"></i>All Notice</a></li>
-                        <li><a href="javascript:void(0)"><i class="fa fa-circle-o"></i> Report </a></li>
                         
                     </ul>
                 </li>
