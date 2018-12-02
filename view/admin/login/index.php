@@ -13,7 +13,7 @@
  $host = "localhost";  
  $username = "root";  
  $password = "";  
- $database = "bangla";  
+ $database = "sphsg";  
  $message = "";  
  try  
  {  
@@ -60,7 +60,7 @@
                         setcookie ("password","");
                       }
                     }
-                    header("location:http://localhost/saghataen/view/admin/index.php"); 
+                    header("location:http://localhost/esoft/view/admin/index.php"); 
   
                 }  
                 else  
@@ -84,7 +84,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Ehsan Software | Registration Page</title>
   <link rel="shortcut icon" href="assets/admin/dist/img/avatar.png">
-  <base href="http://localhost/saghataen/">
+  <base href="http://localhost/esoft/">
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->

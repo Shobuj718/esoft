@@ -8,7 +8,7 @@
  $host = "localhost";  
  $username = "root";  
  $password = "";  
- $database = "bangla";  
+ $database = "sphsg";  
  $message = "";  
  try  
  {  
@@ -55,7 +55,7 @@
                         setcookie ("password","");
                       }
                     }
-                    header("location:http://localhost/impo/fapore/view/admin/index.php"); 
+                    header("location:http://localhost/esoft/view/admin/index.php"); 
   
                 }  
                 else  
@@ -79,7 +79,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Forgot Password | Ehsan Software</title>
   <link rel="shortcut icon" href="assets/admin/dist/img/avatar.png">
-  <base href="http://localhost/impo/Fapore/">
+  <base href="http://localhost/esoft/">
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
@@ -159,7 +159,7 @@
           <button type="submit" name="login" class="btn btn-primary ">Generate new password </button>
         </div>
         <div class="col-xs-4 pull-right" >
-          <a class="btn btn-default"  href="http://localhost/impo/fapore/view/admin/login/index.php">Sign In</a>
+          <a class="btn btn-default"  href="view/admin/login/index.php">Sign In</a>
         </div>
         <!-- /.col -->
       </div>

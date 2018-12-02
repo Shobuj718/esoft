@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>ফাঁপোর উচ্চ বিদ্যালয় </title>
+<title>School Website Title </title>
 <base href="http://localhost/esoft/">
 <link rel="shortcut icon" href="assets/front/images/ehsan soft logo.png">
 
