@@ -8,30 +8,13 @@
     $subject = new Subject();
     $results  = $subject->selectAllSub();
 
-    // echo "<pre>";
-    // var_dump($result);
-    //die();
 
- ?>
-
- 
-
-
-<?php
-/**
- * Created by PhpStorm.
- * User: Shobuj
- * Date: 16-Nov-17
- * Time: 12:17 PM
- */
-
- 
 
 ?>
             <!-- Content Header (Page header) -->
             <section class="content-header">
                 <h1>
-                    সকল বিষয় 
+                    All Subject
                 </h1>
                 <ol class="breadcrumb">
                     <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -51,7 +34,7 @@
                         <?php  
                             if($_SESSION['type'] == 'administrator'){
                         ?>
-                                <a href="view/admin/classinfo/newsubadd.php"><h3 class="box-title pull-right btn btn-primary">নতুন বিষয় যুক্ত করুন </h3></a>
+                                <a href="view/admin/classinfo/newsubadd.php"><h3 class="box-title pull-right btn btn-primary"><i class="fa fa-plus"></i> Add New</h3></a>
                          <?php } ?>
 
                             </div>
@@ -59,17 +42,15 @@
                 <?php
             if(isset($_SESSION['addsub'])){
                 echo "<div class='alert alert-success'>".$_SESSION['addsub']."</div>";
-                //session_unset();
-                //session_reset();
+                unset($_SESSION['addsub']);
             }
             if(isset($_SESSION['deletesub'])){
                 echo "<div class='alert alert-danger'>".$_SESSION['deletesub']."</div>";
-                session_unset();
+                unset($_SESSION['deletesub']);
             }
             if(isset($_SESSION['updatesub'])){
                 echo "<div class='alert alert-info'>".$_SESSION['updatesub']."</div>";
-                //session_unset();
-                //session_reset();
+                unset($_SESSION['updatesub']);
             }
 
 
@@ -77,6 +58,7 @@
 
                             <!-- /.box-header -->
                             <div class="box-body">
+                               <div class="box-body table-responsive no-padding">
                                 <table id="example1" class="table table-bordered table-striped">
                                     <thead>
                                     <tr>
@@ -129,6 +111,7 @@
 
                                 </table>
                             </div>
+                          </div>
                             <!-- /.box-body -->
                         </div>
                         <!-- /.box -->

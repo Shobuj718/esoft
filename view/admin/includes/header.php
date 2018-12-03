@@ -586,33 +586,34 @@ z-index: 999999;
                         </ul>
                     </li>
 
-                <li class="treeview">
+            
+                <li class="treeview  ">
                     <a href="javascript:void(0)">
-                        <i class="fa fa-laptop"></i>
-                        <span>Institution Information</span>
+                        <i class="fa fa-folder"></i> <span>Students Information</span>
                         <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
                     </a>
                     <ul class="treeview-menu">
-                        <li><a href="view/admin/organizationIfo/allnews.php"><i class="fa fa-circle-o"></i> Dashboard  </a></li>
-                       
+                         <li><a href="view/admin/StudentInfo/allstudent.php"><i class="fa fa-circle-o"></i>Dashboard </a></li>
+                        <li><a href="view/admin/StudentInfo/allstudent.php"><i class="fa fa-circle-o"></i> All Students</a></li>
 
-                    <?php 
-                        if($_SESSION["type"] == 'administrator'){
-                    ?>
+                  <?php  
+                      if($_SESSION['type'] == 'administrator'){
+                  ?>
 
-                        <li><a href="view/admin/organizationIfo/topnews.php"><i class="fa fa-circle-o"></i>Add Notice</a></li>
-                        <li><a href="view/admin/organizationIfo/slideadd.php"><i class="fa fa-circle-o"></i>Add Slider Image</a></li>
-                        <li><a href="view/admin/organizationIfo/allslide.php"><i class="fa fa-circle-o"></i>All Slider Image</a></li>
+                        <li><a href="view/admin/StudentInfo/studentInfoAdd.php"><i class="fa fa-circle-o"></i> Add Biodata</a></li>
+                        <li><a href="javascript:void(0)"><i class="fa fa-circle-o"></i> Class Migration</a></li>
+                        <li><a href="javascript:void(0)"><i class="fa fa-circle-o"></i> Section Migration </a></li>
 
                     <?php } ?>
 
-                        <li><a href="view/admin/organizationIfo/allnews.php"><i class="fa fa-circle-o"></i>All Notice</a></li>
+                        <li><a href="javascript:void(0)"><i class="fa fa-circle-o"></i> All Syllabus </a></li>
+                        <li><a href="javascript:void(0)"><i class="fa fa-circle-o"></i> Id Card </a></li>
+                        <li><a href="javascript:void(0)"><i class="fa fa-circle-o"></i> Report </a></li>
                         
                     </ul>
-                </li>
-				
+                </li>   
 				
            <li class="treeview  ">
               <a href="javascript:void(0)">
@@ -643,34 +644,33 @@ z-index: 999999;
                 </li>
 
 
-                <li class="treeview  ">
+                <li class="treeview">
                     <a href="javascript:void(0)">
-                        <i class="fa fa-folder"></i> <span>Students Information</span>
+                        <i class="fa fa-laptop"></i>
+                        <span>Institution Information</span>
                         <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
                     </a>
                     <ul class="treeview-menu">
-                         <li><a href="view/admin/StudentInfo/allstudent.php"><i class="fa fa-circle-o"></i>Dashboard </a></li>
-                        <li><a href="view/admin/StudentInfo/allstudent.php"><i class="fa fa-circle-o"></i> All Students</a></li>
+                        <li><a href="view/admin/organizationIfo/allnews.php"><i class="fa fa-circle-o"></i> Dashboard  </a></li>
+                       
 
-                  <?php  
-                      if($_SESSION['type'] == 'administrator'){
-                  ?>
+                    <?php 
+                        if($_SESSION["type"] == 'administrator'){
+                    ?>
 
-                        <li><a href="view/admin/StudentInfo/studentInfoAdd.php"><i class="fa fa-circle-o"></i> Add Biodata</a></li>
-                        <li><a href="javascript:void(0)"><i class="fa fa-circle-o"></i> Class Migration</a></li>
-                        <li><a href="javascript:void(0)"><i class="fa fa-circle-o"></i> Section Migration </a></li>
+                        <li><a href="view/admin/organizationIfo/topnews.php"><i class="fa fa-circle-o"></i>Add Notice</a></li>
+                        <li><a href="view/admin/organizationIfo/slideadd.php"><i class="fa fa-circle-o"></i>Add Slider Image</a></li>
+                        <li><a href="view/admin/organizationIfo/allslide.php"><i class="fa fa-circle-o"></i>All Slider Image</a></li>
 
                     <?php } ?>
 
-                        <li><a href="javascript:void(0)"><i class="fa fa-circle-o"></i> All Syllabus </a></li>
-                        <li><a href="javascript:void(0)"><i class="fa fa-circle-o"></i> Id Card </a></li>
-                        <li><a href="javascript:void(0)"><i class="fa fa-circle-o"></i> Report </a></li>
+                        <li><a href="view/admin/organizationIfo/allnews.php"><i class="fa fa-circle-o"></i>All Notice</a></li>
                         
                     </ul>
                 </li>
-               
+        
                 <li class="treeview">
                     <a href="javascript:void(0)">
                         <i class="fa fa-edit"></i> <span>Class Information</span>

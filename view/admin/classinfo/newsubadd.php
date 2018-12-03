@@ -7,28 +7,20 @@
     <div class="content">
         <form action="view/admin/classinfo/newsubstore.php" method="post">
 
-			<h2 style="text-align:center; color:green;">নতুন সাবজেক্ট যোগ করুন</h2>
+			<h2 style="text-align:center; color:green;">Add New Subject</h2>
 		 	<br>
 
-		 	<!-- <?php 
-
-		 		if(isset($_SESSION['subject'])){
-		 			echo "<div class='alert alert-success'>".$_SESSION['subject']."</div>";
-		 			//session_destroy();
-		 		}
-
-		 	 ?> -->
   
 		    <div class="row">
 	            <div class="col-md-4">
                     <div class="form-group">
-		                <label for="">বিষয় :</label>
+		                <label for="">Subject :</label>
 		                <input type="text" name="subject" class="form-control" placeholder="Enter Subject Name..." id="" required="" >
 	            	</div>
                 </div>
 	            <div class="col-md-4">
 	                <div class="form-group">
-	                    <label>বিভাগ:</label>
+	                    <label>Department:</label>
 	                    <select class="form-control" name="department" required>
 	                        <option>সিলেক্ট করুন</option>
 	                        <option>জেনারেল</option>

@@ -24,7 +24,7 @@
     <div class="content">
         <form action="view/admin/classinfo/updateSubject.php" method="post">
 
-			<h2 style="text-align:center; color:green;"> সাবজেক্ট Update   করুন</h2>
+			<h2 style="text-align:center; color:green;">Update Subject</h2>
 		 	<br>
 
 		 	 
@@ -32,14 +32,14 @@
 		    <div class="row">
 	            <div class="col-md-4">
                     <div class="form-group">
-		                <label for="">বিষয় :</label>
+		                <label for="">Subject :</label>
 		                <input type="text" name="subject" value="<?= $result['subject']; ?> " class="form-control" placeholder="Enter Subject Name..." id="" required="" >
 		                <input type="hidden" name="unique_id" value="<?= $result['unique_id']; ?> " class="form-control"  id="" required="" >
 	            	</div>
                 </div>
 	            <div class="col-md-4">
 	                <div class="form-group">
-	                    <label>বিভাগ:</label>
+	                    <label>Department :</label>
 	                    <select class="form-control" name="department" required>
 	                        <option>সিলেক্ট করুন</option>
 	                        <option <?= $result['department'] == 'জেনারেল'?'selected':'' ?> >জেনারেল</option>

@@ -17,7 +17,7 @@
             <!-- Content Header (Page header) -->
             <section class="content-header">
                 <h1>
-                    সকল ক্লাস 
+                   All Class
                 </h1>
                 <ol class="breadcrumb">
                     <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -37,24 +37,22 @@
                       if($_SESSION['type'] == 'administrator'){
                   ?>
                             <div class="box-header">
-                                <a href="view/admin/classinfo/addclass.php"><h3 class="box-title pull-right btn btn-primary">নতুন ক্লাস যুক্ত করুন </h3></a>
+                                <a href="view/admin/classinfo/addclass.php"><h3 class="box-title pull-right btn btn-primary"><i class="fa fa-plus"></i> Add New </h3></a>
                             </div>
                     <?php } ?>
 
                 <?php
             if(isset($_SESSION['classadd'])){
                 echo "<div class='alert alert-success'>".$_SESSION['classadd']."</div>";
-                //session_unset();
-                //session_reset();
+                unset($_SESSION['classadd']);
             }
             if(isset($_SESSION['deleteClass'])){
                 echo "<div class='alert alert-danger'>".$_SESSION['deleteClass']."</div>";
-                session_unset();
+                unset($_SESSION['deleteClass']);
             }
             if(isset($_SESSION['updateClass'])){
                 echo "<div class='alert alert-info'>".$_SESSION['updateClass']."</div>";
-                //session_unset();
-                //session_reset();
+                unset($_SESSION['updateClass']);
             }
 
 
@@ -62,6 +60,7 @@
 
                             <!-- /.box-header -->
                             <div class="box-body">
+                              <div class="box-body table-responsive no-padding">
                                 <table id="example1" class="table table-bordered table-striped">
                                     <thead>
                                     <tr>
@@ -108,6 +107,7 @@
 
                                 </table>
                             </div>
+                          </div>
                             <!-- /.box-body -->
                         </div>
                         <!-- /.box -->
