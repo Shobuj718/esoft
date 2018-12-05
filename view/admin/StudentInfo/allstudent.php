@@ -1,7 +1,6 @@
 
 <?php
-    
-
+  
 /**
  * Created by PhpStorm.
  * User: Shobuj
@@ -15,7 +14,7 @@ include_once '../../../vendor/autoload.php';
 use App\admin\student\Student;
 $student = new Student();
 
-$stmt = 'SELECT * FROM student_data where person = "student" AND status = "1" ORDER by id DESC';
+$stmt = 'SELECT * FROM student_data where person = "student" AND status = "1" ORDER by id DESC limit 12';
 $results = $student->select($stmt);
 
 
@@ -24,12 +23,12 @@ $results = $student->select($stmt);
             <!-- Content Header (Page header) -->
             <section class="content-header">
                 <h1>
-                    সকল শিক্ষার্থী
+                    All Sutdents
                     <!-- <small>advanced tables</small> -->
                 </h1>
                 <ol class="breadcrumb">
                     <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-                    <li><a href="#">Tables</a></li>
+                    <li><a href="javascript:void(0)">Tables</a></li>
                     <li class="active">Tables</li>
                 </ol>
             </section>
@@ -42,18 +41,17 @@ $results = $student->select($stmt);
 
                         <div class="box">
                             <div class="box-header">
-                                <h3 class="box-title">শিক্ষার্থীদের সকল তথ্য দেখতে ডানে   view বাটনে ক্লিক করুন </h3>
+                                <h3 class="box-title">Click on the View button to see all the information about the students</h3>
                             <?php  
                                 if($_SESSION['type'] == 'administrator'){
                             ?>
-                                <a href="view/admin/StudentInfo/studentInfoAdd.php"><h3 class="box-title pull-right btn btn-primary">নতুন শিক্ষার্থী যোগ  করুন </h3></a>
+                                <a href="view/admin/StudentInfo/studentInfoAdd.php"><h3 class="box-title pull-right btn btn-primary"><i class="fa fa-plus"></i> Add New </h3></a>
                             <?php
                               }
                             ?>
                                 <?php
             if(isset($_SESSION['msg'])){
                 echo "<div class='alert alert-success'>".$_SESSION['msg']."</div>";
-                //session_unset();
                 unset($_SESSION['msg']);
             }
             if(isset($_SESSION['delete'])){
@@ -70,6 +68,7 @@ $results = $student->select($stmt);
                 </div>
                 <!-- /.box-header -->
                 <div class="box-body">
+                  <div class="box-body table-responsive no-padding">
                     <table id="example1" class="table table-bordered table-striped">
                         <thead>
                         <tr>
@@ -102,25 +101,25 @@ $results = $student->select($stmt);
                     $sl = 1;
                     foreach ($results as $result) {
                         ?>
-                           <tr>
-                               <td><?php echo $sl++?></td>
-                               <td><?php echo $result['student_name']?></td>
-                               <td><?php echo $result['class']?></td>
-                               <td><?php echo $result['class_roll']?></td>
-                               <td><?php echo $result['branch']?></td>
-                               <td><?php echo $result['shift']?></td>
-                               <td><?php echo $result['department']?></td>
-                               <td><?php echo $result['father_phone']?></td>
-							   <td><?php echo $result['father_name']?></td>
-                                <td><?php echo $result['mother_name']?></td>
+                         <tr>
+                             <td><?php echo $sl++?></td>
+                             <td><?php echo $result['student_name']?></td>
+                             <td><?php echo $result['class']?></td>
+                             <td><?php echo $result['class_roll']?></td>
+                             <td><?php echo $result['branch']?></td>
+                             <td><?php echo $result['shift']?></td>
+                             <td><?php echo $result['department']?></td>
+                              <td><?php echo $result['father_phone']?></td>
+					                   <td><?php echo $result['father_name']?></td>
+                              <td><?php echo $result['mother_name']?></td>
 
-                               <td><?php echo $result['student_id']?></td>
+                             <td><?php echo $result['student_id']?></td>
 
-                                <td>
-                                   <img src="view/admin/uploads/<?php echo $result['student_image']?>" width="100" alt="no image">
-                               </td>
+                              <td>
+                                 <img src="view/admin/uploads/student/<?php echo $result['student_image']?>" width="100" alt="no image">
+                             </td>
 							   
-                               <td>
+                              <td>
                                    <!--                                    <a class="btn btn-info" href="#">Show</a>-->
                                    <!--                                    <a class="btn btn-primary" href="#">Edit</a>-->
                                    <!--                                    <a class="btn btn-danger" href="#">Delete</a>-->
@@ -151,11 +150,11 @@ $results = $student->select($stmt);
                                </td>
 							   
                                 <td>
-                                   <img src="view/admin/uploads/<?php echo $result['father_image']?>" width="100" alt="no image">
+                                   <img src="view/admin/uploads/student/<?php echo $result['father_image']?>" width="100" alt="no image">
                                </td>
 							   
                                 <td>
-                                   <img src="view/admin/uploads/<?php echo $result['mother_image']?>" width="100" alt="no image">
+                                   <img src="view/admin/uploads/student/<?php echo $result['mother_image']?>" width="100" alt="no image">
                                </td>
                            </tr>
 
@@ -164,6 +163,7 @@ $results = $student->select($stmt);
                        </tbody>
 
                     </table>
+                  </div>
                 </div>
                 <!-- /.box-body -->
             </div>

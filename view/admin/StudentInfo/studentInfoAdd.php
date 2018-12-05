@@ -1,18 +1,3 @@
-
-<?php
-                 
- // if(isset($_SESSION["username"]))  
- // {  
- //    header('location:view/admin/studentinfo/studentinfoadd.php');
- //      // echo '<h3>Login Success, Welcome - '.$_SESSION["username"].'</h3>';  
- //      // echo '<br /><br /><a href="logout.php">Logout</a>';  
- // }  
- // else  
- // {  
- //      header("location:../../../index.php");  
- // }
- ?>
-
 <?php
 /**
  * Created by PhpStorm.
@@ -31,17 +16,7 @@
     $results = $student->selectId();
     $lastid = $results['student_id'];
 
-
-            
-                    // $db = new PDO("mysql:host=localhost;dbname=bangla;charset=utf8;", "root", "");
-                    // $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                    // $db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
-
-                    // $stmt = $db->prepare("select student_id from student_data ORDER by id DESC Limit 1 ");
-                    // $stmt->execute();
-                    // $result = $stmt->fetch(PDO::PARAM_STR);
-                    // $lastid = $result['student_id'];
-            ?>
+?>
 
 
 <div class="col-md-12">
@@ -52,17 +27,17 @@
             <!-- <form action="#" method="post" enctype="multipart/form-data"> -->
             <form action="view/admin/StudentInfo/rowInser.php" method="post" enctype="multipart/form-data">
 
-                <h3 class="text-center" style="color: #2559ee">শিক্ষার্থীর একাডেমিক তথ্যাবলী যোগ করুন </h3>
+                <h3 class="text-center" style="color: #2559ee">Add Student Academic Information </h3>
                 <hr />
                     <?php
             
             if(isset($_SESSION['imgSize'])){
                 echo "<div class='alert alert-danger'>".$_SESSION['imgSize']."</div>";
-                session_unset();
+                unset($_SESSION['imgSize']);
             }
             if(isset($_SESSION['fileext'])){
                 echo "<div class='alert alert-danger'>".$_SESSION['fileext']."</div>";
-                session_unset();
+                unset($_SESSION['fileext']);
             }
 
 

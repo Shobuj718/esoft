@@ -691,7 +691,7 @@ z-index: 999999;
 
                     <?php } ?>
 
-                       <li><a href="view/admin/classinfo/section/allsection.php"><i class="fa fa-circle-o"></i>All Section </a></li>
+                       <li><a href="view/admin/classinfo/allsection.php"><i class="fa fa-circle-o"></i>All Section </a></li>
 
                     <?php 
                         if($_SESSION["type"] == 'administrator'){

@@ -585,16 +585,16 @@ z-index: 999999;
                            
                         </ul>
                     </li>
-
+                                		
             
-                <li class="treeview  ">
+          <li class="treeview  ">
                     <a href="javascript:void(0)">
                         <i class="fa fa-folder"></i> <span>Students Information</span>
                         <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
                     </a>
-                    <ul class="treeview-menu">
+                  <ul class="treeview-menu">
                          <li><a href="view/admin/StudentInfo/allstudent.php"><i class="fa fa-circle-o"></i>Dashboard </a></li>
                         <li><a href="view/admin/StudentInfo/allstudent.php"><i class="fa fa-circle-o"></i> All Students</a></li>
 
@@ -690,7 +690,7 @@ z-index: 999999;
 
                     <?php } ?>
 
-                       <li><a href="view/admin/classinfo/section/allsection.php"><i class="fa fa-circle-o"></i>All Section </a></li>
+                       <li><a href="view/admin/classinfo/allsection.php"><i class="fa fa-circle-o"></i>All Section </a></li>
 
                     <?php 
                         if($_SESSION["type"] == 'administrator'){

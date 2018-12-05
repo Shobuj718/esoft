@@ -17,7 +17,7 @@ error_reporting(0);
 
 //error_reporting(0);
 
-$db = new PDO('mysql:host=localhost;dbname=bangla;charset=utf8', 'root', '');
+$db = new PDO('mysql:host=localhost;dbname=sphsg;charset=utf8', 'root', '');
 $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 $db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
 
@@ -127,7 +127,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 
 
-            $uploadMainTo = "../uploads/" . $student_image;
+            $uploadMainTo = "../uploads/student/" . $student_image;
             $moveMain = move_uploaded_file($main_image_tmp, $uploadMainTo);
         }
 
@@ -165,7 +165,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 
 
-            $uploadSecondTo = "../uploads/" . $father_image;
+            $uploadSecondTo = "../uploads/student/" . $father_image;
             $moveSecond = move_uploaded_file($second_image_tmp, $uploadSecondTo);
         }
 
@@ -201,7 +201,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 
 
-            $uploadMainTo = "../uploads/" . $mother_image;
+            $uploadMainTo = "../uploads/student/" . $mother_image;
             $moveMain = move_uploaded_file($main_image_tmp, $uploadMainTo);
         }
 
@@ -449,7 +449,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 
 
-            $uploadMainTo = "../uploads/" . $student_image;
+            $uploadMainTo = "../uploads/student/" . $student_image;
             $moveMain = move_uploaded_file($main_image_tmp, $uploadMainTo);
         }
 
@@ -487,7 +487,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 
 
-            $uploadSecondTo = "../uploads/" . $father_image;
+            $uploadSecondTo = "../uploads/student/" . $father_image;
             $moveSecond = move_uploaded_file($second_image_tmp, $uploadSecondTo);
         }
 
@@ -735,7 +735,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 
 
-            $uploadMainTo = "../uploads/" . $student_image;
+            $uploadMainTo = "../uploads/student/" . $student_image;
             $moveMain = move_uploaded_file($main_image_tmp, $uploadMainTo);
         }
 
@@ -772,7 +772,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 
 
-            $uploadMainTo = "../uploads/" . $mother_image;
+            $uploadMainTo = "../uploads/student/" . $mother_image;
             $moveMain = move_uploaded_file($main_image_tmp, $uploadMainTo);
         }
 
@@ -1021,7 +1021,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 
 
-            $uploadSecondTo = "../uploads/" . $father_image;
+            $uploadSecondTo = "../uploads/student/" . $father_image;
             $moveSecond = move_uploaded_file($second_image_tmp, $uploadSecondTo);
         }
 
@@ -1057,7 +1057,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
  
 
-            $uploadMainTo = "../uploads/" . $mother_image;
+            $uploadMainTo = "../uploads/student/" . $mother_image;
             $moveMain = move_uploaded_file($main_image_tmp, $uploadMainTo);
         }
  
@@ -1312,7 +1312,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
  
 
-            $uploadMainTo = "../uploads/" . $student_image;
+            $uploadMainTo = "../uploads/student/" . $student_image;
             $moveMain = move_uploaded_file($main_image_tmp, $uploadMainTo);
         }
  
@@ -1565,7 +1565,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 
 
-            $uploadSecondTo = "../uploads/" . $father_image;
+            $uploadSecondTo = "../uploads/student/" . $father_image;
             $moveSecond = move_uploaded_file($second_image_tmp, $uploadSecondTo);
         }
 
@@ -1818,7 +1818,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 
 
-            $uploadMainTo = "../uploads/" . $mother_image;
+            $uploadMainTo = "../uploads/student/" . $mother_image;
             $moveMain = move_uploaded_file($main_image_tmp, $uploadMainTo);
         }
 

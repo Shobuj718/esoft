@@ -85,7 +85,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 ?>
 
 <?php
-$db = new PDO('mysql:host=localhost;dbname=bangla;charset=utf8', 'root', '');
+$db = new PDO('mysql:host=localhost;dbname=sphsg;charset=utf8', 'root', '');
 $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 $db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
 
@@ -128,7 +128,7 @@ if (!empty($_FILES['student_image'])) {
     }
 
     
-    $uploadMainTo = "../uploads/" . $student_image;
+    $uploadMainTo = "../uploads/student/" . $student_image;
     $moveMain = move_uploaded_file($main_image_tmp, $uploadMainTo);
 } 
 
@@ -167,7 +167,7 @@ elseif (in_array($file_ext, $permited) == false) {
 
 
 
-    $uploadSecondTo = "../uploads/" . $father_image;
+    $uploadSecondTo = "../uploads/student/" . $father_image;
     $moveSecond = move_uploaded_file($second_image_tmp, $uploadSecondTo);
 }
 
@@ -203,7 +203,7 @@ elseif (in_array($file_ext, $permited) == false) {
     die();
 }
 
-    $uploadPdfTo = "../uploads/" . $mother_image;
+    $uploadPdfTo = "../uploads/student/" . $mother_image;
     $movepdf = move_uploaded_file($pdf_tmp, $uploadPdfTo);
 }
 
@@ -216,17 +216,6 @@ elseif (in_array($file_ext, $permited) == false) {
 $stmt = $db->prepare("insert into student_data(sex, student_name, class, shift, branch, department, student_id, class_roll, year, birth_day, birth_month, birth_year, blood_group, religion, birth_reg_num, last_study_orga, why_left, last_Orga_phone, home_name, hoding_number, road_number, village_name, postoffice, unione_name, thana_name, district_name, postcode, lasting_home_name, lasting_holding_number, lasting_road_number, lasting_village, lasting_postoffice, lasting_unione, lasting_thana, lasting_district, lasting_postcode, father_name, father_occupation, fa_monthly_income, fa_edu_quali, father_phone, father_email, father_national_id, mother_name, mother_occupation, mo_monthly_income, mo_edu_quali, mother_phone, mother_email, mo_national_id, local_gurdian, local_occupation, relation, local_edu, local_phone, local_email, local_national_id, student_image, father_image, mother_image, unique_id)
 
 VALUES(:sex, :student_name, :class, :shift, :branch, :department, :student_id, :class_roll, :year, :birth_day, :birth_month, :birth_year, :blood_group, :religion, :birth_reg_num, :last_study_orga, :why_left, :last_Orga_pho, :home_name, :hoding_number, :road_number, :village_name, :postoffice, :unione_name, :thana_name, :district_name, :postcode, :lasting_home_name, :lasting_holding_number, :lasting_road_number, :lasting_village, :lasting_postoffice, :lasting_unione, :lasting_thana, :lasting_district, :lasting_postcode, :father_name, :father_occupation, :fa_monthly_income, :fa_edu_quali, :father_phone, :father_email, :father_national_id, :mother_name, :mother_occupation, :mo_monthly_income, :mo_edu_quali, :mother_phone, :mother_email, :mo_national_id, :local_gurdian, :local_occupation, :relation, :local_edu, :local_phone, :local_email, :local_national_id, :student_image, :father_image, :mother_image, :unique_id)");
-
-
-//$stmt = $db->prepare("INSERT INTO student_data
-//(
-//sex, student_name, class, shift, branch, department, student_id, class_roll, year, birth_day, birth_month, birth_year, blood_group, religion, birth_reg_num, last_study_orga, why_left, last_Orga_phone, home_name, hoding_number, road_number, village_name, postoffice, unione_name, thana_name, district_name, postcode, lasting_home_name, lasting_holding_number, lasting_road_number, lasting_village, lasting_postoffice, lasting_unione, lasting_thana, lasting_district, lasting_postcode, father_name, father_occupation, fa_monthly_income, fa_edu_quali, father_phone, father_email, father_national_id, mother_name, mother_occupation, mo_monthly_income, mo_edu_quali, mother_phone, mother_email, mo_national_id, local_gurdian, local_occupation, relation, local_edu, local_phone, local_email, local_national_id, student_image, father_image, mother_image
-//
-//)
-//
-// VALUES(:sex, :student_name, :class, :shift, :branch, :department, :student_id, :class_roll, :year, :birth_day, :birth_month, :birth_year, :blood_group, :religion, :birth_reg_num, :last_study_orga, :why_left, :last_Orga_phone, :home_name, :hoding_number, :road_number, :village_name, :postoffice, :unione_name, :thana_name, :district_name, :postcode, :lasting_home_name, :lasting_holding_number, :lasting_road_number, :lasting_village, :lasting_postoffice, :lasting_unione, :lasting_thana, :lasting_district, :lasting_postcode, :father_name, :father_occupation, :fa_monthly_income, :fa_edu_quali, :father_phone, :father_email, :father_national_id, :mother_name, :mother_occupation, :mo_monthly_income, :mo_edu_quali, :mother_phone, :mother_email, :mo_national_id, :local_gurdian, :local_occupation, :relation, :local_edu, :local_phone, :local_email, :local_national_id, :student_image, :father_image, :mother_image)");
-
-
 
 
 $result = $stmt->execute(array(

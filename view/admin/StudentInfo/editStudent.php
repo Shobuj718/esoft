@@ -1,31 +1,16 @@
 
-<?php
-                 
- // if(isset($_SESSION["username"]))  
- // {  
- //    header('location:view/admin/index.php');
- //      // echo '<h3>Login Success, Welcome - '.$_SESSION["username"].'</h3>';  
- //      // echo '<br /><br /><a href="logout.php">Logout</a>';  
- // }  
- // else  
- // {  
- //      header("location:index.php");  
- // }
- ?>
 
 <?php
-    include_once '../includes/header.php';
-    include_once '../../../vendor/autoload.php';
 
-
-?>
-<?php
 /**
  * Created by PhpStorm.
  * User: Shobuj
  * Date: 16-Nov-17
  * Time: 12:17 PM
  */
+
+include_once '../includes/header.php';
+include_once '../../../vendor/autoload.php';
 error_reporting(0);
 
 
@@ -35,19 +20,6 @@ $student = new Student();
 $id = $_GET['edit'];
 $result = $student->showSelect($id);
 
-
-// $db = new PDO('mysql:host=localhost;dbname=bangla;charset=utf8', 'root', '');
-// $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-// $db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
-// $id = $_GET['edit'];
-// //                echo $id;
-// //                var_dump($id);
-// //                die();
-// $stm =  $db->prepare("SELECT * FROM `student_data` WHERE unique_id = :id");
-// $stm->bindValue(':id', $id, PDO::PARAM_STR);
-// $stm->execute();
-// $result = $stm->fetch(PDO::FETCH_ASSOC);
-//use $results
 
 ?>
 
@@ -83,7 +55,7 @@ $result = $student->showSelect($id);
                             <label for="">লিঙ্গ <font color="red" size="4">*</font></label>
                             <select class="form-control" name="sex" required>
                                 <option>সিলেক্ট করুন </option>
-                                <option <?php echo ($result['sex']=='ছেলে')? 'selected':'' ?> value="ছেলে">ছেলে</option>
+                        <option <?php echo ($result['sex']=='ছেলে')? 'selected':'' ?> value="ছেলে">ছেলে</option>
                         <option <?php echo ($result['sex']=='মেয়ে')? 'selected':'' ?> value="মেয়ে">মেয়ে</option>
                         <option <?php echo ($result['sex']=='অন্যান্য')? 'selected':'' ?> value="অন্যান্য">অন্যান্য</option>
                             </select>
@@ -761,21 +733,21 @@ $result = $student->showSelect($id);
                         <div class="form-group">
                             <label for=""> শিক্ষার্থী ছবি :<font color="red" size="4">*</font> </label>
                             <input type='file' name="student_image"     onchange="readURL(this);" />
-                            <img id="blah" src="view/admin/uploads/<?php echo $result['student_image']?>" width="100" alt="" />
+                            <img id="blah" src="view/admin/uploads/student/<?php echo $result['student_image']?>" width="100" alt="" />
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="form-group">
                             <label for="">পিতার ছবি : <font color="red" size="4">*</font></label>
                             <input type='file' name="father_image"     onchange="readURL2(this);" />
-                            <img id="blah2" src="view/admin/uploads/<?php echo $result['father_image']?>" width="100" alt="" />
+                            <img id="blah2" src="view/admin/uploads/student/<?php echo $result['father_image']?>" width="100" alt="" />
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="form-group">
                             <label for="">মাতার ছবি: <font color="red" size="4">*</font></label>
                             <input type='file' name="mother_image"     onchange="readURL3(this);" />
-                            <img id="blah3" src="view/admin/uploads/<?php echo $result['mother_image']?>" width="100" alt="" />
+                            <img id="blah3" src="view/admin/uploads/student/<?php echo $result['mother_image']?>" width="100" alt="" />
                         </div>
                     </div>
                 </div>
