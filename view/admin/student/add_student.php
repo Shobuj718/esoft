@@ -105,24 +105,14 @@
                             </select>
                         </div>
                     </div>
+
                     <div class="col-md-6">
-                         <div class="form-group">
-                            <label for="">Shift : <font color="red" size="4">*</font> </label>
-                            <select class="form-control" name="shift" required>
-                                <option>-select-</option>
-
-            <option <?php if(isset($_SESSION['data'])){
-                echo ($_SESSION['data']['shift']=='Morning')? 'selected':''; } ?> value='Morning'>Morning</option>
-            <option <?php if(isset($_SESSION['data'])){
-                echo ($_SESSION['data']['shift']=='Day')? 'selected':''; } ?> value='Day'>Day</option>
-            <option <?php if(isset($_SESSION['data'])){
-                echo ($_SESSION['data']['shift']=='Evening')? 'selected':''; } ?> value='Evening'>Evening</option>
-            <option <?php if(isset($_SESSION['data'])){
-                echo ($_SESSION['data']['shift']=='Night')? 'selected':''; } ?> value='Night'>Night</option>
-
-                            </select>
+                        <div class="form-group">
+                            <label for=""> Class Roll : </label>
+                            <input type="text" name="class_roll" class="form-control" value="<?php if(isset($_SESSION['data'])){echo $_SESSION['data']['class_roll'];} ?>" pattern="[0-9]+" title="Must Contain Number " placeholder="Enter Class Roll..." id="">
                         </div>
                     </div>
+                   
                 </div>
                 <div class="row">
                     <div class="col-md-6">
@@ -166,9 +156,21 @@
 
                 <div class="row">
                     <div class="col-md-6">
-                        <div class="form-group">
-                            <label for=""> Class Roll : </label>
-                            <input type="text" name="class_roll" class="form-control" value="<?php if(isset($_SESSION['data'])){echo $_SESSION['data']['class_roll'];} ?>" pattern="[0-9]+" title="Must Contain Number " placeholder="Enter Class Roll..." id="">
+                         <div class="form-group">
+                            <label for="">Shift : <font color="red" size="4">*</font> </label>
+                            <select class="form-control" name="shift" required>
+                                <option>-select-</option>
+
+            <option <?php if(isset($_SESSION['data'])){
+                echo ($_SESSION['data']['shift']=='Morning')? 'selected':''; } ?> value='Morning'>Morning</option>
+            <option <?php if(isset($_SESSION['data'])){
+                echo ($_SESSION['data']['shift']=='Day')? 'selected':''; } ?> value='Day'>Day</option>
+            <option <?php if(isset($_SESSION['data'])){
+                echo ($_SESSION['data']['shift']=='Evening')? 'selected':''; } ?> value='Evening'>Evening</option>
+            <option <?php if(isset($_SESSION['data'])){
+                echo ($_SESSION['data']['shift']=='Night')? 'selected':''; } ?> value='Night'>Night</option>
+
+                            </select>
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -336,7 +338,14 @@
                 </div>
 
                 <div class="row">
-                    <div class="col-md-6">
+
+                    <div class="col-lg-4">
+                        <div class="form-group">
+                            <label for="">Birth Registration Number : <font color="red" size="4">*</font></label>
+                            <input type="text" name="birth_reg_num" class="form-control" value="<?php if(isset($_SESSION['data'])){echo $_SESSION['data']['birth_reg_num'];} ?>"  pattern="[0-9]+" title="Must Contain Number " placeholder="Enter birth reg:  number..." required id="">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
                         <div class="form-group">
                             <label for="">Blood Group :</label>
                             <select class="form-control" name="blood_group" >
@@ -361,7 +370,7 @@
                             </select>
                         </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-4">
                         <div class="form-group">
                             <label for="">Religion : <font color="red" size="4">*</font></label>
                             <select class="form-control" name="religion" required>
@@ -382,17 +391,17 @@
                 </div>
 
                 <div class="row">
-                    <div class="col-lg-6">
-                        <div class="form-group">
-                            <label for="">Birth Registration Number : <font color="red" size="4">*</font></label>
-                            <input type="text" name="birth_reg_num" class="form-control" value="<?php if(isset($_SESSION['data'])){echo $_SESSION['data']['birth_reg_num'];} ?>"  pattern="[0-9]+" title="Must Contain Number " placeholder="Enter birth reg:  number..." required id="">
-                        </div>
-                    </div>
 
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="">Mobile Number : </label>
-                            <input type="text" name="last_Orga_phone" class="form-control" value="<?php if(isset($_SESSION['data'])){echo $_SESSION['data']['last_Orga_phone'];} ?>"  pattern="[0-9]{11}" title="Must contain number(0-9) and max 11 character" placeholder="Enter Phone Number..." >
+                            <input type="text" name="student_mobile" class="form-control" value="<?php if(isset($_SESSION['data'])){echo $_SESSION['data']['last_Orga_phone'];} ?>"  pattern="[0-9]{11}" title="Must contain number(0-9) and max 11 character" placeholder="Enter Phone Number..." >
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="">Student Email :</label>
+                            <input type="text" name="student_email" class="form-control" value="<?php if(isset($_SESSION['data'])){echo $_SESSION['data']['student_email'];} ?>"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"  placeholder="Enter student email.." id="">
                         </div>
                     </div>
                     

@@ -378,9 +378,9 @@ class Student extends Connection
             }
 
            // extract($data);
-            $stmt = $this->con->prepare("insert into student_data(sex, student_name, class, shift, branch, department, student_id, class_roll, year, birth_day, birth_month, birth_year, blood_group, religion, birth_reg_num, last_study_orga, why_left, last_Orga_phone, home_name, hoding_number, road_number, village_name, postoffice, unione_name, thana_name, district_name, postcode, lasting_home_name, lasting_holding_number, lasting_road_number, lasting_village, lasting_postoffice, lasting_unione, lasting_thana, lasting_district, lasting_postcode, father_name, father_occupation, fa_monthly_income, fa_edu_quali, father_phone, father_email, father_national_id, mother_name, mother_occupation, mo_monthly_income, mo_edu_quali, mother_phone, mother_email, mo_national_id, local_gurdian, local_occupation, relation, local_edu, local_phone, local_email, local_national_id, student_image, father_image, mother_image, unique_id)
+            $stmt = $this->con->prepare("insert into student_data(sex, student_name, class, shift, branch, department, student_id, class_roll, student_mobile, student_email, year, birth_day, birth_month, birth_year, blood_group, religion, birth_reg_num, last_study_orga, why_left, home_name, hoding_number, road_number, village_name, postoffice, unione_name, thana_name, district_name, postcode, lasting_home_name, lasting_holding_number, lasting_road_number, lasting_village, lasting_postoffice, lasting_unione, lasting_thana, lasting_district, lasting_postcode, father_name, father_occupation, fa_monthly_income, fa_edu_quali, father_phone, father_email, father_national_id, mother_name, mother_occupation, mo_monthly_income, mo_edu_quali, mother_phone, mother_email, mo_national_id, local_gurdian, local_occupation, relation, local_edu, local_phone, local_email, local_national_id, student_image, father_image, mother_image, unique_id)
 
-            VALUES(:sex, :student_name, :class, :shift, :branch, :department, :student_id, :class_roll, :year, :birth_day, :birth_month, :birth_year, :blood_group, :religion, :birth_reg_num, :last_study_orga, :why_left, :last_Orga_pho, :home_name, :hoding_number, :road_number, :village_name, :postoffice, :unione_name, :thana_name, :district_name, :postcode, :lasting_home_name, :lasting_holding_number, :lasting_road_number, :lasting_village, :lasting_postoffice, :lasting_unione, :lasting_thana, :lasting_district, :lasting_postcode, :father_name, :father_occupation, :fa_monthly_income, :fa_edu_quali, :father_phone, :father_email, :father_national_id, :mother_name, :mother_occupation, :mo_monthly_income, :mo_edu_quali, :mother_phone, :mother_email, :mo_national_id, :local_gurdian, :local_occupation, :relation, :local_edu, :local_phone, :local_email, :local_national_id, :student_image, :father_image, :mother_image, :unique_id)");
+            VALUES(:sex, :student_name, :class, :shift, :branch, :department, :student_id, :class_roll, :student_mobile, :student_email, :year, :birth_day, :birth_month, :birth_year, :blood_group, :religion, :birth_reg_num, :last_study_orga, :why_left, :home_name, :hoding_number, :road_number, :village_name, :postoffice, :unione_name, :thana_name, :district_name, :postcode, :lasting_home_name, :lasting_holding_number, :lasting_road_number, :lasting_village, :lasting_postoffice, :lasting_unione, :lasting_thana, :lasting_district, :lasting_postcode, :father_name, :father_occupation, :fa_monthly_income, :fa_edu_quali, :father_phone, :father_email, :father_national_id, :mother_name, :mother_occupation, :mo_monthly_income, :mo_edu_quali, :mother_phone, :mother_email, :mo_national_id, :local_gurdian, :local_occupation, :relation, :local_edu, :local_phone, :local_email, :local_national_id, :student_image, :father_image, :mother_image, :unique_id)");
             $stmt->execute(array(
                 ':sex' => $sex,
                 ':student_name' => $student_name,
@@ -390,6 +390,8 @@ class Student extends Connection
                 ':department'=>$department,
                 ':student_id'=>$student_id,
                 ':class_roll'=>$class_roll,
+                ':student_mobile'=>$student_mobile,
+                ':student_email'=>$student_email,
                 ':year'=>$year,
                 ':birth_day'=>$birth_day,
                 ':birth_month'=>$birth_month,
@@ -399,7 +401,6 @@ class Student extends Connection
                 ':birth_reg_num'=>$birth_reg_num,
                 ':last_study_orga'=>$last_study_orga,
                 ':why_left'=>$why_left,
-                ':last_Orga_pho'=>$last_Orga_phone,
                 ':home_name'=>$home_name,
                 ':hoding_number'=>$hoding_number,
                 ':road_number'=>$road_number,
