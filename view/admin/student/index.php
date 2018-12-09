@@ -140,7 +140,7 @@ $results = $student->select($stmt);
 
                          <a style="color: black" class="text-info" href="view/admin/StudentInfo/showStudent.php?show=<?php echo $result['unique_id']?>">View</a> 
 
-                       | <a  class="text-primary" href="view/admin/StudentInfo/editStudent.php?edit=<?php echo $result['unique_id']; ?>">Edit</a> |
+                       | <a  class="text-primary" href="view/admin/student/edit_student.php?edit=<?php echo $result['unique_id']; ?>">Edit</a> |
                         <a onclick="return confirm('Are you sure to Delete'); " class="text-danger" href="view/admin/StudentInfo/deleteStudent.php?del=<?php echo $result['unique_id']; ?>">Delete</a>
 
                     <?php
